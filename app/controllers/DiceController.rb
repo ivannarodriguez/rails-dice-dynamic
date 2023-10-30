@@ -12,6 +12,8 @@ class DiceController < ApplicationController
       die = rand(1..6)
       @rolls.push(die)
     end
+    
+    render({:template => "rollstatic"})
   end
 
   def twoten
@@ -23,6 +25,8 @@ class DiceController < ApplicationController
       die = rand(1..10)
       @rolls.push(die)
     end
+
+    render({:template => "rollstatic"})
   end
 
   def onetwenty
@@ -34,6 +38,8 @@ class DiceController < ApplicationController
       die = rand(1..20)
       @rolls.push(die)
     end
+
+    render({:template => "rollstatic"})
   end
 
   def fivefour
@@ -45,6 +51,8 @@ class DiceController < ApplicationController
       die = rand(1..4)
       @rolls.push(die)
     end
+
+    render({:template => "rollstatic"})
   end
 
   def roll
@@ -54,7 +62,7 @@ class DiceController < ApplicationController
   
     @num_dice.times do
     @rolls.push(rand(1..@num_sides))
-
-    render({:template => "roll"})
   end
+
+  render({:template => "rolldynamic"})
 end
