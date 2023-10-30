@@ -61,8 +61,9 @@ class DiceController < ApplicationController
     @rolls = []
   
     @num_dice.times do
-    @rolls.push(rand(1..@num_sides))
+      @rolls.push(rand(1..@num_sides))
+    end
+    
+    render({:template => "rolldynamic"})
   end
-
-  render({:template => "rolldynamic"})
 end
